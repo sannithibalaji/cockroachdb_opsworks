@@ -1,0 +1,10 @@
+{
+  "id": "cockroachdb-platform-2-centos-7",
+  "run_list": [ "role[cockroachdb-platform-kitchen]" ],
+  "automatic": {
+    "fqdn": "cockroachdb-platform-2-centos-7",
+    "roles":[
+      "cockroachdb-platform-kitchen"
+    ]
+  }
+}
