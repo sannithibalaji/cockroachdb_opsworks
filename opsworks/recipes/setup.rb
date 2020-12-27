@@ -6,7 +6,7 @@ directory "/opt/sources" do
     action :create
 end
 
-cockroach_version= default["cockroach_version"]
+cockroach_version= node["cockroach_version"]
 remote_file "/opt/sources/cockroach-#{cockroach_version}.linux-amd64.tgz" do
   source "https://binaries.cockroachdb.com/cockroach-#{cockroach_version}.linux-amd64.tgz"
   action :create
