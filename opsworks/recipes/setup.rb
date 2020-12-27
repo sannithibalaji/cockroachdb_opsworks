@@ -16,5 +16,5 @@ end
 tar_extract '/opt/sources/cockroach-v20.2.3.linux-amd64.tgz' do
   action :extract_local
   target_dir '/opt/sources'
-  creates '/opt/sources/cockroach'
+  creates '/opt/sources/cockroach-v20.2.3.linux-amd64/cockroach'
 end
