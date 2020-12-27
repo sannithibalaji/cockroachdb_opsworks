@@ -1,0 +1,19 @@
+{
+  "name": "cockroachdb-platform-kitchen",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+    "cockroachdb-platform": {
+      "role": "cockroachdb-platform-kitchen",
+      "size": 3
+    }
+  },
+  "override_attributes": {
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[cockroachdb-platform]"
+  ],
+  "env_run_lists": {
+
+  }
+}
