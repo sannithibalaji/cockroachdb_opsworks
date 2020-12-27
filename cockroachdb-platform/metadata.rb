@@ -10,6 +10,4 @@ version '1.4.0'
 
 chef_version '>= 12.9'
 
-depends 'ark'
-depends 'cluster-search'
-supports 'centos', '>= 7.1'
+depends 'tar'
