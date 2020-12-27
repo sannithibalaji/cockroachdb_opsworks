@@ -20,7 +20,7 @@ tar_extract "/opt/sources/cockroach-#{cockroach_version}.linux-amd64.tgz" do
 end
 
 remote_file "Copy executable" do 
-  path "/usr/local/bin/cockroach" 
+  path "/usr/bin/cockroach" 
   source "file:///opt/sources/cockroach-#{cockroach_version}.linux-amd64/cockroach"
   owner "root"
   group "root"
