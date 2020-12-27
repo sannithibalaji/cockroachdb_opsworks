@@ -26,3 +26,21 @@ remote_file "Copy executable" do
   group "root"
   mode 0755
 end
+
+user 'cockroach' do
+  action :create
+end
+
+directory '/var/lib/cockroach' do
+  owner 'cockroach'
+  group 'cockroach'
+  mode '0755'
+  action :create
+end
+
+directory '/var/lib/cockroach/certs' do
+  owner 'cockroach'
+  group 'cockroach'
+  mode '0755'
+  action :create
+end
