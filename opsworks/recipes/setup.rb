@@ -6,15 +6,23 @@ directory '/opt/sources' do
     action :create
 end
 
-
-remote_file '/opt/sources/cockroach-v20.2.3.linux-amd64.tgz' do
-  source 'https://binaries.cockroachdb.com/cockroach-v20.2.3.linux-amd64.tgz'
+chef_version= default['cockroach_version']
+remote_file '/opt/sources/cockroach-${chef_version}.linux-amd64.tgz' do
+  source 'https://binaries.cockroachdb.com/cockroach-${chef_version}.linux-amd64.tgz'
   action :create
 end
 
 
-tar_extract '/opt/sources/cockroach-v20.2.3.linux-amd64.tgz' do
+tar_extract '/opt/sources/cockroach-${chef_version}.linux-amd64.tgz' do
   action :extract_local
   target_dir '/opt/sources'
-  creates '/opt/sources/cockroach-v20.2.3.linux-amd64/cockroach'
+  creates '/opt/sources/cockroach-${chef_version}.linux-amd64/cockroach'
+end
+
+remote_file "Copy executable" do 
+  path "/usr/local/bin/cockroach" 
+  source "file:///opt/sources/cockroach-${chef_version}.linux-amd64/cockroach"
+  owner 'root'
+  group 'root'
+  mode 0755
 end

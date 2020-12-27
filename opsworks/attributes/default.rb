@@ -1,1 +1,1 @@
-default[cookbook_name]['data_bag']['name'] = 'secrets'
+default['cockroach_version'] = 'v20.2.3'
